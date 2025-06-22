@@ -20,7 +20,7 @@ Este projeto é uma API RESTful construída com **Spring Boot** e **Java**, dese
 ---
 
 ## 📁 Estrutura do Projeto
-
+```
 src
 ├── main
 │ ├── java
@@ -36,7 +36,7 @@ src
 │ └── data.sql
 └── test
 └── ...
-
+```
 
 ---
 
