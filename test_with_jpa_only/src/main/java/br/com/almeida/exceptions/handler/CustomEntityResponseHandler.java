@@ -1,7 +1,6 @@
 package br.com.almeida.exceptions.handler;
 
 import br.com.almeida.exceptions.ExceptionResponse;
-import br.com.almeida.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -26,20 +25,6 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
                 request.getDescription(false)
         );
       return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public final ResponseEntity<ExceptionResponse> handleNotFoundException(
-            ResourceNotFoundException ex,
-            WebRequest request
-
-    ){
-        ExceptionResponse response = new ExceptionResponse(
-                new Date(),
-                ex.getMessage(),
-                request.getDescription(false)
-        );
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
 
